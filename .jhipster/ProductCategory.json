@@ -1,0 +1,23 @@
+{
+  "annotations": {
+    "changelogDate": "20240202081625"
+  },
+  "applications": "*",
+  "entityTableName": "product_category",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "ordre",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "ProductCategory",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

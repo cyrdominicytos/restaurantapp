@@ -7,7 +7,14 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
-        "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
+        "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
+        "product": "Product",
+        "client": "Client",
+        "productCategory": "Product Category",
+        "formula": "Formula",
+        "commandes": "Commandes",
+        "commandesFormulaItem": "Commandes Formula Item",
+        "commandesProductItem": "Commandes Product Item"
       },
       "account": {
         "main": "Account",

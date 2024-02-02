@@ -1,0 +1,26 @@
+{
+  "restaurantappApp": {
+    "commandesProductItem": {
+      "home": {
+        "title": "CommandesProductItems",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Commandes Product Item",
+        "createOrEditLabel": "Créer ou éditer un Commandes Product Item",
+        "notFound": "Aucun Commandes Product Item trouvé"
+      },
+      "created": "Un nouveau Commandes Product Item a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Commandes Product Item avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Commandes Product Item avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Commandes Product Item {{ id }} ?"
+      },
+      "detail": {
+        "title": "Commandes Product Item"
+      },
+      "id": "ID",
+      "quantity": "Quantity",
+      "product": "Product",
+      "commandes": "Commandes"
+    }
+  }
+}

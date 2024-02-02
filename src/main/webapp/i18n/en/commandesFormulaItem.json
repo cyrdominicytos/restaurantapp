@@ -1,0 +1,25 @@
+{
+  "restaurantappApp": {
+    "commandesFormulaItem": {
+      "home": {
+        "title": "Commandes Formula Items",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Commandes Formula Item",
+        "createOrEditLabel": "Create or edit a Commandes Formula Item",
+        "notFound": "No Commandes Formula Items found"
+      },
+      "created": "A new Commandes Formula Item is created with identifier {{ param }}",
+      "updated": "A Commandes Formula Item is updated with identifier {{ param }}",
+      "deleted": "A Commandes Formula Item is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Commandes Formula Item {{ id }}?"
+      },
+      "detail": {
+        "title": "Commandes Formula Item"
+      },
+      "id": "ID",
+      "quantity": "Quantity",
+      "commandes": "Commandes"
+    }
+  }
+}

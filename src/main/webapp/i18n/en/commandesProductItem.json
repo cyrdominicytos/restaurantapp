@@ -1,0 +1,26 @@
+{
+  "restaurantappApp": {
+    "commandesProductItem": {
+      "home": {
+        "title": "Commandes Product Items",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Commandes Product Item",
+        "createOrEditLabel": "Create or edit a Commandes Product Item",
+        "notFound": "No Commandes Product Items found"
+      },
+      "created": "A new Commandes Product Item is created with identifier {{ param }}",
+      "updated": "A Commandes Product Item is updated with identifier {{ param }}",
+      "deleted": "A Commandes Product Item is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Commandes Product Item {{ id }}?"
+      },
+      "detail": {
+        "title": "Commandes Product Item"
+      },
+      "id": "ID",
+      "quantity": "Quantity",
+      "product": "Product",
+      "commandes": "Commandes"
+    }
+  }
+}

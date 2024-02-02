@@ -1,0 +1,25 @@
+{
+  "annotations": {
+    "changelogDate": "20240202082025"
+  },
+  "applications": "*",
+  "entityTableName": "commandes_product_item",
+  "fields": [
+    {
+      "fieldName": "quantity",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "CommandesProductItem",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "product",
+      "relationshipName": "product",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

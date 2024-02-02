@@ -1,0 +1,35 @@
+{
+  "restaurantappApp": {
+    "product": {
+      "home": {
+        "title": "Products",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Product",
+        "createOrEditLabel": "Créer ou éditer un Product",
+        "notFound": "Aucun Product trouvé"
+      },
+      "created": "Un nouveau Product a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Product avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Product avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Product {{ id }} ?"
+      },
+      "detail": {
+        "title": "Product"
+      },
+      "id": "ID",
+      "price": "Price",
+      "name": "Name",
+      "photo": "Photo",
+      "imageType": "Image Type",
+      "description": "Description",
+      "isSupplement": "Is Supplement",
+      "createdDate": "Created Date",
+      "updatedDate": "Updated Date",
+      "category": "Category",
+      "commandess": "Commandess",
+      "formula": "Formula",
+      "commandesProductItem": "Commandes Product Item"
+    }
+  }
+}

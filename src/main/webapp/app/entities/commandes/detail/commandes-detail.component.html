@@ -1,0 +1,72 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (commandes) {
+      <div>
+        <h2 data-cy="commandesDetailsHeading"><span jhiTranslate="restaurantappApp.commandes.detail.title">Commandes</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ commandes.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="restaurantappApp.commandes.amount">Amount</span></dt>
+          <dd>
+            <span>{{ commandes.amount }}</span>
+          </dd>
+          <dt><span jhiTranslate="restaurantappApp.commandes.createdDate">Created Date</span></dt>
+          <dd>
+            <span>{{ commandes.createdDate | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="restaurantappApp.commandes.recoveryDate">Recovery Date</span></dt>
+          <dd>
+            <span>{{ commandes.recoveryDate | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="restaurantappApp.commandes.updatedDate">Updated Date</span></dt>
+          <dd>
+            <span>{{ commandes.updatedDate | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="restaurantappApp.commandes.user">User</span></dt>
+          <dd>
+            @if (commandes.user) {
+              <div>
+                <a [routerLink]="['/client', commandes.user.id, 'view']">{{ commandes.user.id }}</a>
+              </div>
+            }
+          </dd>
+          <dt><span jhiTranslate="restaurantappApp.commandes.products">Products</span></dt>
+          <dd>
+            @for (products of commandes.products; track $index; let last = $last) {
+              <span>
+                <a [routerLink]="['/product', products.id, 'view']">{{ products.id }}</a
+                >{{ last ? '' : ', ' }}
+              </span>
+            }
+          </dd>
+          <dt><span jhiTranslate="restaurantappApp.commandes.formulas">Formulas</span></dt>
+          <dd>
+            @for (formulas of commandes.formulas; track $index; let last = $last) {
+              <span>
+                <a [routerLink]="['/formula', formulas.id, 'view']">{{ formulas.id }}</a
+                >{{ last ? '' : ', ' }}
+              </span>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Retour</span>
+        </button>
+
+        <button type="button" [routerLink]="['/commandes', commandes.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editer</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

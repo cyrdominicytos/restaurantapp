@@ -1,0 +1,107 @@
+// BEGIN JDL
+
+entity Product {
+    price Double required
+    name String required
+    photo Blob
+    imageType String
+    description String
+    isSupplement Boolean
+    createdDate Instant
+    updatedDate Instant
+}
+
+entity Client {
+
+    firstName String required
+	lastName String required
+	address String 
+	phoneNumber String 
+    createdDate Instant
+    updatedDate Instant
+}
+
+
+entity ProductCategory {
+    name String required
+    ordre Integer    
+}
+
+
+entity Formula {
+    price Double required
+    name String
+    photo Blob
+    imageType String
+    description String
+    createdDate Instant
+    updatedDate Instant
+}
+
+
+entity Commandes {
+    amount Double required
+    createdDate Instant
+    recoveryDate Instant
+    updatedDate Instant
+}
+
+
+entity CommandesFormulaItem {
+    quantity Integer
+
+}
+entity CommandesProductItem {
+    quantity Integer
+
+}
+
+
+// Une Commandes peut avoir plusieurs CommandesFormulaItem
+relationship OneToMany {
+    Commandes{CommandesFormulaItems} to CommandesFormulaItem
+}
+
+// Une Commandes peut avoir plusieurs CommandesProductItem
+relationship OneToMany {
+    Commandes{CommandesProductItems} to CommandesProductItem
+}
+
+// Pour chaque CommandesProductItem, on connaît le Product
+relationship OneToOne {
+    CommandesProductItem{product} to Product
+}
+
+//A product is of one category
+relationship ManyToOne {
+    Product{category} to ProductCategory
+}
+
+//A formula has many products
+relationship OneToMany {
+    Formula{products} to @OnDelete("CASCADE") @OnUpdate("CASCADE") Product
+   
+}
+
+//An Commandes has may product and formula
+relationship ManyToMany {
+    Commandes{products} to Product{Commandess} // Bidirectional
+    Commandes{formulas} to Formula{Commandess} // Bidirectional
+}
+
+//An Commandes has one user (client)
+relationship ManyToOne {
+    Commandes{user} to Client
+}
+
+
+
+// End JDL
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
+// Set pagination options
+paginate * with pagination

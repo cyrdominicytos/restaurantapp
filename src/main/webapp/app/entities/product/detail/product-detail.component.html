@@ -1,0 +1,83 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (product) {
+      <div>
+        <h2 data-cy="productDetailsHeading"><span jhiTranslate="restaurantappApp.product.detail.title">Product</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ product.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="restaurantappApp.product.price">Price</span></dt>
+          <dd>
+            <span>{{ product.price }}</span>
+          </dd>
+          <dt><span jhiTranslate="restaurantappApp.product.name">Name</span></dt>
+          <dd>
+            <span>{{ product.name }}</span>
+          </dd>
+          <dt><span jhiTranslate="restaurantappApp.product.photo">Photo</span></dt>
+          <dd>
+            @if (product.photo) {
+              <div>
+                <a (click)="openFile(product.photo, product.photoContentType)" jhiTranslate="entity.action.open">Ouvrir</a>
+                {{ product.photoContentType }}, {{ byteSize(product.photo) }}
+              </div>
+            }
+          </dd>
+          <dt><span jhiTranslate="restaurantappApp.product.imageType">Image Type</span></dt>
+          <dd>
+            <span>{{ product.imageType }}</span>
+          </dd>
+          <dt><span jhiTranslate="restaurantappApp.product.description">Description</span></dt>
+          <dd>
+            <span>{{ product.description }}</span>
+          </dd>
+          <dt><span jhiTranslate="restaurantappApp.product.isSupplement">Is Supplement</span></dt>
+          <dd>
+            <span>{{ product.isSupplement }}</span>
+          </dd>
+          <dt><span jhiTranslate="restaurantappApp.product.createdDate">Created Date</span></dt>
+          <dd>
+            <span>{{ product.createdDate | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="restaurantappApp.product.updatedDate">Updated Date</span></dt>
+          <dd>
+            <span>{{ product.updatedDate | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="restaurantappApp.product.category">Category</span></dt>
+          <dd>
+            @if (product.category) {
+              <div>
+                <a [routerLink]="['/product-category', product.category.id, 'view']">{{ product.category.id }}</a>
+              </div>
+            }
+          </dd>
+          <dt><span jhiTranslate="restaurantappApp.product.formula">Formula</span></dt>
+          <dd>
+            @if (product.formula) {
+              <div>
+                <a [routerLink]="['/formula', product.formula.id, 'view']">{{ product.formula.id }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Retour</span>
+        </button>
+
+        <button type="button" [routerLink]="['/product', product.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editer</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

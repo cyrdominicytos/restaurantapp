@@ -1,0 +1,18 @@
+{
+  "annotations": {
+    "changelogDate": "20240202081925"
+  },
+  "applications": "*",
+  "entityTableName": "commandes_formula_item",
+  "fields": [
+    {
+      "fieldName": "quantity",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "CommandesFormulaItem",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
