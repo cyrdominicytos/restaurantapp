@@ -1,0 +1,27 @@
+{
+  "applications": "*",
+  "changelogDate": "20240201190854",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "commandes_formula_item",
+  "fields": [
+    {
+      "fieldName": "quantity",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "CommandesFormulaItem",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "commandes",
+      "otherEntityRelationshipName": "commandesFormulaItems",
+      "relationshipName": "commandes",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

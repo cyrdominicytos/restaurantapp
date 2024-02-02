@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity Commandes.
+    -->
+    <changeSet id="20240201190853-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="commandes"
+                                 constraintName="fk_commandes__user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="commandes_id"
+                                 baseTableName="rel_commandes__products"
+                                 constraintName="fk_rel_commandes__products__commandes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="commandes"/>
+
+        <addForeignKeyConstraint baseColumnNames="products_id"
+                                 baseTableName="rel_commandes__products"
+                                 constraintName="fk_rel_commandes__products__products_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product"/>
+
+        <addForeignKeyConstraint baseColumnNames="commandes_id"
+                                 baseTableName="rel_commandes__formulas"
+                                 constraintName="fk_rel_commandes__formulas__commandes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="commandes"/>
+
+        <addForeignKeyConstraint baseColumnNames="formulas_id"
+                                 baseTableName="rel_commandes__formulas"
+                                 constraintName="fk_rel_commandes__formulas__formulas_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="formula"/>
+    </changeSet>
+</databaseChangeLog>

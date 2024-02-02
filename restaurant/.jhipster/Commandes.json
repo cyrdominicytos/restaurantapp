@@ -1,0 +1,65 @@
+{
+  "applications": "*",
+  "changelogDate": "20240201190853",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "commandes",
+  "fields": [
+    {
+      "fieldName": "amount",
+      "fieldType": "Double",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "recoveryDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Commandes",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "commandesFormulaItem",
+      "otherEntityRelationshipName": "commandes",
+      "relationshipName": "commandesFormulaItems",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "commandesProductItem",
+      "otherEntityRelationshipName": "commandes",
+      "relationshipName": "commandesProductItems",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "user",
+      "relationshipName": "user",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "commandess",
+      "ownerSide": true,
+      "relationshipName": "products",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "formula",
+      "otherEntityRelationshipName": "commandess",
+      "ownerSide": true,
+      "relationshipName": "formulas",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}
